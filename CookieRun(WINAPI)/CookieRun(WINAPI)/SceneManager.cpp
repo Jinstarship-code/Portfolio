@@ -41,8 +41,10 @@ void SceneManager::SetScene(SCENES _state)
 
 void SceneManager::Progress()
 {
+	m_SceneState->Progress();
 }
 
 void SceneManager::Render(HDC _hdc)
 {
+	m_SceneState->Render(_hdc);
 }

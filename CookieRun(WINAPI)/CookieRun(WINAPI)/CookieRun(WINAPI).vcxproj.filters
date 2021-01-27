@@ -49,6 +49,30 @@
     <Filter Include="소스 파일\02. Scene\Stage">
       <UniqueIdentifier>{add344d6-9973-44a2-ac44-dbdf75ce216a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\99. Manager\CollisionManager">
+      <UniqueIdentifier>{ae9131d3-c341-428c-bb8f-321830637671}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99. Manager\BitmapManager">
+      <UniqueIdentifier>{f04b9a0e-e798-45ea-9c46-cda2fccafbf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99. Manager\ObjectManager">
+      <UniqueIdentifier>{62fdeb20-7413-4ac4-af6c-dd93445a1d4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99. Manager\ObjectManager\ObjectFactory">
+      <UniqueIdentifier>{c84e0ac1-e2db-47b3-bb51-5a815cbb31ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Player">
+      <UniqueIdentifier>{47c9a406-e930-47f6-a090-2f57df9f6bb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Obstacle">
+      <UniqueIdentifier>{f237f8b3-1a52-4e08-a494-3c31565bf3d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Jelly">
+      <UniqueIdentifier>{81e43cf2-2e9f-484a-9a6e-b23dcafcc431}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99. Manager\BitmapManager\Bitmap">
+      <UniqueIdentifier>{08654bc4-02fa-4319-9e00-bd1383230180}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CookieRun(WINAPI).h">
@@ -99,6 +123,36 @@
     <ClInclude Include="Logo.h">
       <Filter>소스 파일\02. Scene\Logo</Filter>
     </ClInclude>
+    <ClInclude Include="ObjectFactory.h">
+      <Filter>소스 파일\99. Manager\ObjectManager\ObjectFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>소스 파일\99. Manager\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>소스 파일\01. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Bridge.h">
+      <Filter>헤더 파일\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>소스 파일\01. Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Jelly.h">
+      <Filter>소스 파일\01. Object\Jelly</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstacle.h">
+      <Filter>소스 파일\01. Object\Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>소스 파일\99. Manager\CollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="BitmapManager.h">
+      <Filter>소스 파일\99. Manager\BitmapManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Bitmap.h">
+      <Filter>소스 파일\99. Manager\BitmapManager\Bitmap</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CookieRun(WINAPI).cpp">
@@ -127,6 +181,30 @@
     </ClCompile>
     <ClCompile Include="Logo.cpp">
       <Filter>소스 파일\02. Scene\Logo</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>소스 파일\99. Manager\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일\01. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\01. Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Jelly.cpp">
+      <Filter>소스 파일\01. Object\Jelly</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>소스 파일\01. Object\Obstacle</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>소스 파일\99. Manager\CollisionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="BitmapManager.cpp">
+      <Filter>소스 파일\99. Manager\BitmapManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Bitmap.cpp">
+      <Filter>소스 파일\99. Manager\BitmapManager\Bitmap</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

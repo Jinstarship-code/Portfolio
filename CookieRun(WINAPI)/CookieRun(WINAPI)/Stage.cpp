@@ -6,6 +6,7 @@ Stage::Stage()
 
 Stage::~Stage()
 {
+	Release();
 }
 
 void Stage::Initialize(void)

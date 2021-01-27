@@ -1,6 +1,10 @@
 #include "MainUpdate.h"
 #include "SoundManager.h"
 #include "InputManager.h"
+#include "SceneManager.h"
+
+#include "Bitmap.h"
+#include "BitmapManager.h"
 
 MainUpdate::MainUpdate()
 {
@@ -17,14 +21,17 @@ void MainUpdate::Initialize(void)
 
 	srand((int)GetTickCount64());
 
+	SceneManager::GetInstance()->SetScene(SCENE_LOGO);
+
 	//사운드 디바이스 생성 및 초기화
 	SoundManager::GetInstance()->Initialize();
 
 	//사운드 추가
+	SoundManager::GetInstance()->AddSound("../Resource/Music/MenuBackMusic.mp3", "MenuBackMusic");
 	SoundManager::GetInstance()->AddSound("../Resource/Music/StageBackMusic.mp3", "StageBackMusic");
-
+	
 	//사운드 재생 및 채널 설정
-	SoundManager::GetInstance()->OnPlaySound("StageBackMusic", SOUND_CHANNEL_ID_BACKGROUND);
+	SoundManager::GetInstance()->OnPlaySound("MenuBackMusic", SOUND_CHANNEL_ID_MENUBACKGROUND);
 }
 
 void MainUpdate::Progress(void)
@@ -35,12 +42,14 @@ void MainUpdate::Progress(void)
 	//재생중인 사운드가 종료되기 전인지 확인
 	SoundManager::GetInstance()->StreamingUpdate();
 
-	
+	SceneManager::GetInstance()->Progress();
 }
 
 void MainUpdate::Render(void)
 {
 	Rectangle(m_hdc, 0, 0, WINSIZEX, WINSIZEY);  // 일단 이정도 크기면 괜찮을듯.
+
+	SceneManager::GetInstance()->Render(m_hdc);
 }
 
 void MainUpdate::Release(void)

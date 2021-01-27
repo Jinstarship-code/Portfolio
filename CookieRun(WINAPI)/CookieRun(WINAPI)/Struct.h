@@ -1,25 +1,22 @@
 #pragma once
 
 
-typedef struct tagVector3
+typedef struct tagVector2
 {
-	float fX, fY, fZ;
+	float fX, fY;
 
-	tagVector3() {};
+	tagVector2() {};
 
-	tagVector3(float _fX, float _fY) : fX(_fX), fY(_fY), fZ(0) {};
+	tagVector2(float _fX, float _fY) : fX(_fX), fY(_fY) {};
 
-	tagVector3(float _fX, float _fY, float _fZ)
-		: fX(_fX), fY(_fY), fZ(_fZ) {};
-
-}Vector3;
+}Vector2;
 
 
 typedef struct tagTransform
 {
-	Vector3 Position;
-	Vector3 Rotation;
-	Vector3 Scale;
+	Vector2 Position;
+	Vector2 Rotation;
+	Vector2 Scale;
 
 }Transform;
 
