@@ -17,11 +17,8 @@ MainUpdate::~MainUpdate()
 
 void MainUpdate::Initialize(void)
 {
+	//그림을 그릴 dc를 window에서 받아옴.
 	m_hdc = GetDC(g_hWnd);
-
-	srand((int)GetTickCount64());
-
-	SceneManager::GetInstance()->SetScene(SCENE_LOGO);
 
 	//사운드 디바이스 생성 및 초기화
 	SoundManager::GetInstance()->Initialize();
@@ -30,8 +27,11 @@ void MainUpdate::Initialize(void)
 	SoundManager::GetInstance()->AddSound("../Resource/Music/MenuBackMusic.mp3", "MenuBackMusic");
 	SoundManager::GetInstance()->AddSound("../Resource/Music/StageBackMusic.mp3", "StageBackMusic");
 	
-	//사운드 재생 및 채널 설정
-	SoundManager::GetInstance()->OnPlaySound("MenuBackMusic", SOUND_CHANNEL_ID_MENUBACKGROUND);
+	//타임값 초기화.
+	srand((int)GetTickCount64());
+	
+	//scene이 logo부터 시작되게.
+	SceneManager::GetInstance()->SetScene(SCENE_LOGO);
 }
 
 void MainUpdate::Progress(void)
@@ -40,15 +40,13 @@ void MainUpdate::Progress(void)
 	InputManager::GetInstance()->UpdateKey();
 
 	//재생중인 사운드가 종료되기 전인지 확인
-	SoundManager::GetInstance()->StreamingUpdate();
+	//SoundManager::GetInstance()->StreamingUpdate();
 
 	SceneManager::GetInstance()->Progress();
 }
 
 void MainUpdate::Render(void)
 {
-	Rectangle(m_hdc, 0, 0, WINSIZEX, WINSIZEY);  // 일단 이정도 크기면 괜찮을듯.
-
 	SceneManager::GetInstance()->Render(m_hdc);
 }
 

@@ -14,6 +14,15 @@ public:
 		return pObj;
 	}
 
+	static Object* CreateObject(string _strKey)
+	{
+		Object* pObj = new T;
+		pObj->Initialize();
+		pObj->SetKey(_strKey);
+
+		return pObj;
+	}
+
 	static Object* CreateObject(float _fx, float _fy)
 	{
 		Object* pObj = new T;
@@ -22,6 +31,17 @@ public:
 
 		return pObj;
 	}
+
+	static Object* CreateObject(float _fx, float _fy,string _str)
+	{
+		Object* pObj = new T;
+		pObj->Initialize();
+		pObj->SetPosition(_fx, _fy);
+		pObj->SetKey(_str);
+
+		return pObj;
+	}
+
 
 	static Object* CreateObject(float _fx, float _fy,Bridge* _pBridge)
 	{

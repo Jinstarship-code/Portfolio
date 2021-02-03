@@ -142,9 +142,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BackGround.h" />
     <ClInclude Include="Bitmap.h" />
     <ClInclude Include="BitmapManager.h" />
     <ClInclude Include="Bridge.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="CookieRun(WINAPI).h" />
     <ClInclude Include="Define.h" />
@@ -154,8 +156,10 @@
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Jelly.h" />
     <ClInclude Include="Logo.h" />
+    <ClInclude Include="LogoObject.h" />
     <ClInclude Include="MainUpdate.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="MenuBack.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectFactory.h" />
     <ClInclude Include="ObjectManager.h" />
@@ -170,15 +174,19 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="BitmapManager.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="CookieRun(WINAPI).cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Jelly.cpp" />
     <ClCompile Include="Logo.cpp" />
+    <ClCompile Include="LogoObject.cpp" />
     <ClCompile Include="MainUpdate.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="MenuBack.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="Obstacle.cpp" />

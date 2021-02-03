@@ -1,11 +1,16 @@
 #pragma once
 #include "Scene.h"
+
+class Object;
 class Logo :
     public Scene
 {
 public:
     Logo();
     virtual ~Logo();
+private:
+    vector<Object*> m_pButtonList;
+    Object* m_pBackGround[2];
 
 public:
     virtual void Initialize(void)override;

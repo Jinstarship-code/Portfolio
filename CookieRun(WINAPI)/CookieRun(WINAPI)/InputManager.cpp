@@ -24,10 +24,15 @@ void InputManager::UpdateKey()
 	}
 	if (GetAsyncKeyState(VK_ESCAPE))	//ESC Å° ´©¸£¸é PAUSE Ã¢ ¶ç¿ì±â
 	{
-		m_dwKey |= KEY_ESC;
+		m_dwKey |= KEY_ESCAPE;
 	}
 	if (GetAsyncKeyState(VK_LBUTTON)) //¿ÞÅ¬¸¯
 	{
 		m_dwKey |= KEY_LBUTTON;
 	}
+	if (GetAsyncKeyState(VK_RETURN)) //¿ÞÅ¬¸¯
+	{
+		m_dwKey |= KEY_RETURN;
+	}
+	
 }

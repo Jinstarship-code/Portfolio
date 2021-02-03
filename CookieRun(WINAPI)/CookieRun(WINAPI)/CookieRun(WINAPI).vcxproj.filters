@@ -37,9 +37,6 @@
     <Filter Include="소스 파일\99. Manager\InputManager">
       <UniqueIdentifier>{238f58d1-7c2b-435a-9f99-db4406fd3938}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\99. Manager\SoundManager">
-      <UniqueIdentifier>{c3ec78da-b63c-4d13-9f3c-060905e31315}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\02. Scene\Logo">
       <UniqueIdentifier>{5dd1757e-65d7-4342-8c8e-02cdc661d300}</UniqueIdentifier>
     </Filter>
@@ -61,17 +58,41 @@
     <Filter Include="소스 파일\99. Manager\ObjectManager\ObjectFactory">
       <UniqueIdentifier>{c84e0ac1-e2db-47b3-bb51-5a815cbb31ba}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\01. Object\Player">
-      <UniqueIdentifier>{47c9a406-e930-47f6-a090-2f57df9f6bb7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\01. Object\Obstacle">
-      <UniqueIdentifier>{f237f8b3-1a52-4e08-a494-3c31565bf3d2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\01. Object\Jelly">
-      <UniqueIdentifier>{81e43cf2-2e9f-484a-9a6e-b23dcafcc431}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\99. Manager\BitmapManager\Bitmap">
       <UniqueIdentifier>{08654bc4-02fa-4319-9e00-bd1383230180}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Stage">
+      <UniqueIdentifier>{da6dc81c-118f-436d-a579-051c4ad270c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Stage\Obstacle">
+      <UniqueIdentifier>{f237f8b3-1a52-4e08-a494-3c31565bf3d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Stage\Player">
+      <UniqueIdentifier>{47c9a406-e930-47f6-a090-2f57df9f6bb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Stage\Jelly">
+      <UniqueIdentifier>{81e43cf2-2e9f-484a-9a6e-b23dcafcc431}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Menu">
+      <UniqueIdentifier>{7c097170-78bb-4224-bbc5-f93ca6a6f23e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Menu\Button">
+      <UniqueIdentifier>{0b88e716-a838-4eb7-9e77-2f7667608f50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Menu\MenuBack">
+      <UniqueIdentifier>{35f7f3c1-637a-4506-b6ad-4a0bfc3f125c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Object_Common">
+      <UniqueIdentifier>{69834462-8d41-4dbe-bd0c-c5b9c9737a19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99. Manager\SoundManager">
+      <UniqueIdentifier>{c3ec78da-b63c-4d13-9f3c-060905e31315}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Object_Common\BackGround">
+      <UniqueIdentifier>{c19248c2-0b8e-4f75-89c3-5dccfef15d1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\LogoObject">
+      <UniqueIdentifier>{227cd0f7-4fd7-4714-9d42-a7e68fd7d20e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -136,13 +157,13 @@
       <Filter>헤더 파일\Include</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>소스 파일\01. Object\Player</Filter>
+      <Filter>소스 파일\01. Object\Stage\Player</Filter>
     </ClInclude>
     <ClInclude Include="Jelly.h">
-      <Filter>소스 파일\01. Object\Jelly</Filter>
+      <Filter>소스 파일\01. Object\Stage\Jelly</Filter>
     </ClInclude>
     <ClInclude Include="Obstacle.h">
-      <Filter>소스 파일\01. Object\Obstacle</Filter>
+      <Filter>소스 파일\01. Object\Stage\Obstacle</Filter>
     </ClInclude>
     <ClInclude Include="CollisionManager.h">
       <Filter>소스 파일\99. Manager\CollisionManager</Filter>
@@ -152,6 +173,18 @@
     </ClInclude>
     <ClInclude Include="Bitmap.h">
       <Filter>소스 파일\99. Manager\BitmapManager\Bitmap</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuBack.h">
+      <Filter>소스 파일\01. Object\Menu\MenuBack</Filter>
+    </ClInclude>
+    <ClInclude Include="BackGround.h">
+      <Filter>소스 파일\01. Object\Object_Common\BackGround</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>소스 파일\01. Object\Menu\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="LogoObject.h">
+      <Filter>소스 파일\01. Object\LogoObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -189,13 +222,13 @@
       <Filter>소스 파일\01. Object</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>소스 파일\01. Object\Player</Filter>
+      <Filter>소스 파일\01. Object\Stage\Player</Filter>
     </ClCompile>
     <ClCompile Include="Jelly.cpp">
-      <Filter>소스 파일\01. Object\Jelly</Filter>
+      <Filter>소스 파일\01. Object\Stage\Jelly</Filter>
     </ClCompile>
     <ClCompile Include="Obstacle.cpp">
-      <Filter>소스 파일\01. Object\Obstacle</Filter>
+      <Filter>소스 파일\01. Object\Stage\Obstacle</Filter>
     </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
       <Filter>소스 파일\99. Manager\CollisionManager</Filter>
@@ -205,6 +238,18 @@
     </ClCompile>
     <ClCompile Include="Bitmap.cpp">
       <Filter>소스 파일\99. Manager\BitmapManager\Bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuBack.cpp">
+      <Filter>소스 파일\01. Object\Menu\MenuBack</Filter>
+    </ClCompile>
+    <ClCompile Include="BackGround.cpp">
+      <Filter>소스 파일\01. Object\Object_Common\BackGround</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>소스 파일\01. Object\Menu\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="LogoObject.cpp">
+      <Filter>소스 파일\01. Object\LogoObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
