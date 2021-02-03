@@ -19,7 +19,7 @@ void MainUpdate::Initialize(void)
 
 	srand((int)GetTickCount64());
 
-	SceneManager::GetInstance()->SetScene(SCENE_LOGO);
+	SceneManager::GetInstance()->SetScene(SCENE_STAGE);
 }
 
 void MainUpdate::Progress(void)

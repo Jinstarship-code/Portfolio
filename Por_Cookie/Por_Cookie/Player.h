@@ -24,7 +24,7 @@ public:
 	virtual void Release(void)override;
 
 public:
-	//void CheckKey();
+	void CheckKey();
 	void SetMoveFalse() { m_bMove = false; }
 public:
 	Player();

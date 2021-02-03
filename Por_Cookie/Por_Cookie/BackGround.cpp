@@ -1,5 +1,6 @@
 #include "BackGround.h"
 
+
 BackGround::BackGround()
 {
 }
@@ -16,7 +17,7 @@ void BackGround::Initialize(void)
 
     m_fAngle = 0.f;
     m_fSpeed = 5.f;
-    m_strKey = "BackGround_1";
+    //m_strKey = "BackGround_1";
 }
 
 int BackGround::Progress(void)
@@ -30,7 +31,7 @@ int BackGround::Progress(void)
 
 void BackGround::Render(HDC _hdc)
 {
-    TransparentBlt(_hdc,
+    /*TransparentBlt(_hdc,
         m_tTransPos.Position.fX,
         m_tTransPos.Position.fY,
         m_tTransPos.Position.fX + m_tTransPos.Scale.fX,
@@ -40,7 +41,9 @@ void BackGround::Render(HDC _hdc)
         (int)0 * m_tTransPos.Position.fY,
         (int)m_tTransPos.Scale.fX,
         (int)m_tTransPos.Scale.fY,
-        RGB(255, 0, 255));
+        RGB(255, 0, 255));*/
+
+    Rectangle(_hdc, 464, 464, WINSIZEX, WINSIZEY);
 }
 /*
 WINGDIAPI BOOL WINAPI TransparentBlt(

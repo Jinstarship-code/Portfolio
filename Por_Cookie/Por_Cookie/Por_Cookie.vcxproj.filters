@@ -82,6 +82,15 @@
     <Filter Include="소스 파일\99. Manager\InputManager">
       <UniqueIdentifier>{09d95907-7759-439f-91de-acc4e285796a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\01. Object\Stage\Obstacle">
+      <UniqueIdentifier>{0de77285-2d17-4c98-939a-ed1c289878d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Stage\Jelly">
+      <UniqueIdentifier>{a4146c37-05f2-4cf5-8e36-325d0001b586}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Stage\Ground">
+      <UniqueIdentifier>{4da9746b-5195-4c23-bf7d-d1a84977dfd3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -156,6 +165,9 @@
     <ClInclude Include="InputManager.h">
       <Filter>소스 파일\99. Manager\InputManager</Filter>
     </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>소스 파일\01. Object\Stage\Ground</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Por_Cookie.cpp">
@@ -202,6 +214,9 @@
     </ClCompile>
     <ClCompile Include="InputManager.cpp">
       <Filter>소스 파일\99. Manager\InputManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Ground.cpp">
+      <Filter>소스 파일\01. Object\Stage\Ground</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

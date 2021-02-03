@@ -147,6 +147,7 @@
     <ClInclude Include="Define.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Ground.h" />
     <ClInclude Include="Include.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Logo.h" />
@@ -169,6 +170,7 @@
     <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="BitmapManager.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
+    <ClCompile Include="Ground.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="MainUpdate.cpp" />
