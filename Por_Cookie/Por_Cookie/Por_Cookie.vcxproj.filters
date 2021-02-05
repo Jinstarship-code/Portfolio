@@ -91,6 +91,9 @@
     <Filter Include="소스 파일\01. Object\Stage\Ground">
       <UniqueIdentifier>{4da9746b-5195-4c23-bf7d-d1a84977dfd3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\99. Manager\SoundManager">
+      <UniqueIdentifier>{f115dde1-5e73-4513-93de-182a269320b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">

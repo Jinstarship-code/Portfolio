@@ -27,7 +27,7 @@ int Ground::Progress(void)
 
 void Ground::Render(HDC _hdc)
 {
-	Rectangle(_hdc, 0,464,WINSIZEX,WINSIZEY);
+	Rectangle(_hdc, 0,500,WINSIZEX,WINSIZEY);
 }
 
 void Ground::Release(void)

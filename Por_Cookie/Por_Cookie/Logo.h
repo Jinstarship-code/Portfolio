@@ -9,7 +9,7 @@ public:
     Logo();
     virtual ~Logo();
 private:
-    Object* m_pBackGround;
+  
     vector<Object*> m_pButtonList;
 public:
     virtual void Initialize(void)override;

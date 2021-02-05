@@ -18,47 +18,16 @@ Logo::~Logo()
 
 void Logo::Initialize(void)
 {
-	string strKey = "BackGround_1";
-
-	m_pBackGround = ObjectFactory<BackGround>::CreateObject(0, 0, strKey);
-
-	m_pImageList = BitmapManager::GetInstance()->GetImageList();
-
-
-	m_pImageList->insert(make_pair(strKey, (new Bitmap)->LoadBmp(L"../Resource/Image/Common/Background/01.bmp")));
-
-	m_pImageList->insert(
-		make_pair("Backbuffer", (new Bitmap)->LoadBmp(L"../Resource/Image/Backbuffer.bmp")));
-
-
-	Object::SetImageList(m_pImageList);
+	
 }
 
 int Logo::Progress(void)
 {
-	m_pBackGround->Progress();
-
-	ObjectManager::GetInstance()->Progress();
-
-	DWORD dwKey = InputManager::GetInstance()->GetKey();
-	if (dwKey & KEY_LBUTTON || dwKey & KEY_RETURN)
-	{
-		SceneManager::GetInstance()->SetScene(SCENE_MENU);
-		
-	}
 	return 0;
 }
 
 void Logo::Render(HDC _hdc)
 {
-	m_pBackGround->Render((*m_pImageList)["BackGround_1"]->GetMemDC());
-
-	ObjectManager::GetInstance()->Render((*m_pImageList)["BackGround_1"]->GetMemDC());
-
-
-	BitBlt(_hdc, 0, 0, WINSIZEX, WINSIZEY,			
-		(*m_pImageList)["BackGround_1"]->GetMemDC(),	
-		0, 0, SRCCOPY);	
 }
 
 
@@ -72,6 +41,5 @@ _In_ DWORD rop);			그림을 복사하는 방법을 설정 SRCCOPY(원본 그대로)
 */
 void Logo::Release(void)
 {
-	delete m_pBackGround;
-	m_pBackGround = NULL;
+	
 }

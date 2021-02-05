@@ -23,7 +23,7 @@ void Player::Initialize(void)
 	m_ptMouse = { 0, 0 };
 	m_tTransPos.Position = Vector2(0.f,300.f);
 	m_tTransPos.Rotation = Vector2(0.f, 0.f);
-	m_tTransPos.Scale = Vector2(234.f,463.f);
+	m_tTransPos.Scale = Vector2(130.f,500.f);
 
 
 	m_tFrame = Frame(0, 0, 7, 0, 150);
@@ -47,8 +47,6 @@ void Player::Initialize(void)
 		이런 문제를 해결하기위해 이미지 전체가 출력되는 시간을 정해놓고 출력해야 한다. (초당 공격력으로 환산된다.)
 	*/
 
-
-
 	m_TargetPoint = Vector2(0.f, 0.f);
 	m_Direction = Vector2(0.f, 0.f);
 
@@ -59,7 +57,6 @@ void Player::Initialize(void)
 	m_bMove = false;
 	m_bJump = false;
 
-
 	//** 출력 프레임을 제어할 시간.
 	m_dwFrameTime = GetTickCount64();
 }
@@ -68,9 +65,10 @@ int Player::Progress(void)
 {
 	CheckKey();
 
-	m_LinePoint.fX = m_tTransPos.Position.fX + cosf(m_fAngle * PI / 180) * 100;
-	m_LinePoint.fY = m_tTransPos.Position.fY + -sinf(m_fAngle * PI / 180) * 100;
+	/*m_LinePoint.fX = m_tTransPos.Position.fX + cosf(m_fAngle * PI / 180) * 100;
+	m_LinePoint.fY = m_tTransPos.Position.fY + -sinf(m_fAngle * PI / 180) * 100;*/
 
+	//점프 컨트롤
 	if (m_bJump)
 	{
 		m_fTime += 0.1f;

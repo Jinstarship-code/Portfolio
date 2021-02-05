@@ -5,7 +5,7 @@ class Bitmap;
 class Scene
 {
 protected:
-	map<string, Bitmap*>* m_pImageList;
+	map<string, Bitmap*> m_ImageList;
 public:
 	Scene();
 	virtual ~Scene();
