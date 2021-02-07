@@ -23,10 +23,10 @@ void Player::Initialize(void)
 	m_ptMouse = { 0, 0 };
 	m_tTransPos.Position = Vector2(0.f,300.f);
 	m_tTransPos.Rotation = Vector2(0.f, 0.f);
-	m_tTransPos.Scale = Vector2(130.f,500.f);
-
-
-	m_tFrame = Frame(0, 0, 7, 0, 150);
+	m_tTransPos.Scale = Vector2(1140/3,286.f);
+	//3520*1920
+	//1140*570
+	m_tFrame = Frame(0, 0, 6, 0, 50);
 
 	/*
 	Frame(int _StartFrame, 출력을 시작할 이미지 시작점.
@@ -101,56 +101,30 @@ int Player::Progress(void)
 
 
 
-	//** 마우스 클릭에 의핸 이동.
-	/*
-	if (m_bMove)
-	{
-		//** 빗변의 길이를 구함.
-		float fLength = sqrt((m_Direction.fX * m_Direction.fX) + (m_Direction.fY * m_Direction.fY));
-
-		//** 폭과 높이보다 항상 큰값인 빗변의 값으로 나누어 정규화 시켜줌.
-		m_Direction.fX /= fLength;
-		m_Direction.fY /= fLength;
-
-		//** 정규화된 값에 Speed를 곱하여 현재 플레이어의 좌표를 변경함.
-		m_tTransPos.Position.fX += m_Direction.fX * m_fSpeed;
-		m_tTransPos.Position.fY += m_Direction.fY * m_fSpeed;
-
-		//** 움직이고있는 플레이어 멈추기.
-		if (m_TargetPoint.fX + (m_fSpeed / 2.f) > m_tTransPos.Position.fX - (m_fSpeed / 2.f) &&
-			 m_TargetPoint.fX - (m_fSpeed / 2.f) < m_tTransPos.Position.fX + (m_fSpeed / 2.f) &&
-			 m_TargetPoint.fY + (m_fSpeed / 2.f) > m_tTransPos.Position.fY - (m_fSpeed / 2.f) &&
-			 m_TargetPoint.fY - (m_fSpeed / 2.f) < m_tTransPos.Position.fY + (m_fSpeed / 2.f))
-		{
-			m_bMove = false;
-		}
-	}
-	*/
-
 	return 0;
 }
 
 void Player::Render(HDC _hdc)
 {
-	//TransparentBlt(_hdc,	  // 복사해 넣을 그림판 ?!
-	//	(int)m_tTransPos.Position.fX,	// 복사할 영역 시작점 X
-	//	(int)m_tTransPos.Position.fY, 	// 복사할 영역 시작점 Y
-	//	(int)m_tTransPos.Scale.fX,	// 복사할 영역 끝부분 X
-	//	(int)m_tTransPos.Scale.fY, 	// 복사할 영역 끝부분 Y
-	//	(*m_ImageList)[m_strKey]->GetMemDC(),	// 복사할 이미지 (복사대상)
-	//	int(m_tFrame.Count * m_tTransPos.Scale.fX),  // 복사할 시작점 X
-	//	int(m_tFrame.Scene * m_tTransPos.Scale.fY),	// 복사할 시작점 Y
-	//	(int)m_tTransPos.Scale.fX, 			// 출력할 이미지의 크기 만큼 X
-	//	(int)m_tTransPos.Scale.fY,			// 출력할 이미지의 크기 만큼 Y
-	//	RGB(255, 0, 255));		// 해당 색상을 제외
+	TransparentBlt(_hdc,	  // 복사해 넣을 그림판 ?!
+		(int)m_tTransPos.Position.fX,	// 복사할 영역 시작점 X
+		(int)m_tTransPos.Position.fY, 	// 복사할 영역 시작점 Y
+		(int)m_tTransPos.Scale.fX,	// 복사할 영역 끝부분 X
+		(int)m_tTransPos.Scale.fY, 	// 복사할 영역 끝부분 Y
+		(*m_ImageList)[m_strKey]->GetMemDC(),	// 복사할 이미지 (복사대상)
+		int(m_tFrame.Count * m_tTransPos.Scale.fX),  // 복사할 시작점 X
+		int(m_tFrame.Scene * m_tTransPos.Scale.fY),	// 복사할 시작점 Y
+		(int)m_tTransPos.Scale.fX, 			// 출력할 이미지의 크기 만큼 X
+		(int)m_tTransPos.Scale.fY,			// 출력할 이미지의 크기 만큼 Y
+		RGB(255, 0, 255));		// 해당 색상을 제외
 
-	Rectangle(_hdc, m_tTransPos.Position.fX, m_tTransPos.Position.fY,
-		m_tTransPos.Scale.fX, m_tTransPos.Scale.fY);
+	/*Rectangle(_hdc, m_tTransPos.Position.fX, m_tTransPos.Position.fY,
+		m_tTransPos.Scale.fX, m_tTransPos.Scale.fY);*/
 }
 
 void Player::Release(void)
 {
-
+	
 }
 
 

@@ -9,6 +9,7 @@
 #include "BitmapManager.h"
 #include "BackGround.h"
 #include "BackGround.h"
+
 Stage::Stage()
 {
 }
@@ -42,14 +43,19 @@ void Stage::Initialize(void)
 		m_ImageList[str] = (new Bitmap)->LoadBmp(pBuffer);
 	}
 
-	m_ImageList["Backbuffer"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Backbuffer.bmp");
 
+	m_ImageList["Ground"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Ground1.bmp");
+
+	m_ImageList["Player"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Player.bmp");
+	m_ImageList["Backbuffer"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Backbuffer.bmp");
 	//플레이어 생성후 오브젝트 매니저에 추가
+	
+	Object* pGround = ObjectFactory<Ground>::CreateObject();
+	ObjectManager::GetInstance()->AddObject(pGround->GetKey(), pGround);
+
 	Object* pPlayer = ObjectFactory<Player>::CreateObject();
 	ObjectManager::GetInstance()->AddObject(pPlayer->GetKey(), pPlayer);
 
-	Object* pGround = ObjectFactory<Ground>::CreateObject();
-	ObjectManager::GetInstance()->AddObject(pGround->GetKey(), pGround);
 	
 	Object* pBackGround = ObjectFactory<BackGround>::CreateObject();
 	ObjectManager::GetInstance()->AddObject(pBackGround->GetKey(), pBackGround);
@@ -71,7 +77,7 @@ void Stage::Render(HDC _hdc)
 	for(int i=0;i<2;i++)
 		m_pBackGround[i]->Render(m_ImageList["Backbuffer"]->GetMemDC());
 	//** 스테이지 이미지가 출력된 버퍼 위에 오브젝트 이미지를 출력함.
-	//ObjectManager::GetInstance()->Render(m_ImageList["Backbuffer"]->GetMemDC());
+	ObjectManager::GetInstance()->Render(m_ImageList["Backbuffer"]->GetMemDC());
 
 	//** 최종 이미지를 HDC에 출력함.
 	BitBlt(_hdc,	//** 그림을 그려 넣을곳
@@ -82,7 +88,7 @@ void Stage::Render(HDC _hdc)
 		0, 0,	// 출력 시작점 좌표
 		SRCCOPY);	// 고속 복사
 
-	//ObjectManager::GetInstance()->Render(_hdc);
+	ObjectManager::GetInstance()->Render(_hdc);
 }
 
 void Stage::Release(void)

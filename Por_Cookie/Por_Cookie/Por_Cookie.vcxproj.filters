@@ -171,6 +171,9 @@
     <ClInclude Include="Ground.h">
       <Filter>소스 파일\01. Object\Stage\Ground</Filter>
     </ClInclude>
+    <ClInclude Include="leak_Check.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Por_Cookie.cpp">

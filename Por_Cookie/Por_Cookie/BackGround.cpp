@@ -44,8 +44,6 @@ void BackGround::Render(HDC _hdc)
         (int)m_tTransPos.Scale.fY,		// 출력할 이미지의 크기 만큼 Y
         RGB(255, 0, 255));		// 해당 색상을 제외
 
-
-    
 }
 /*
 WINGDIAPI BOOL WINAPI TransparentBlt(
