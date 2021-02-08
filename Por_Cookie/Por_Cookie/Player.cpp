@@ -26,7 +26,7 @@ void Player::Initialize(void)
 	m_tTransPos.Scale = Vector2(1140/3,286.f);
 	//3520*1920
 	//1140*570
-	m_tFrame = Frame(0, 0, 6, 0, 50);
+	m_tFrame = Frame(0, 0, 5, 0, 50);
 
 	/*
 	Frame(int _StartFrame, 출력을 시작할 이미지 시작점.
@@ -90,7 +90,7 @@ int Player::Progress(void)
 		m_dwFrameTime = GetTickCount64();
 
 		//** 현재 프레임 카운트가 마지막 이미지 프레임보다 큰지 확인한다.
-		if (m_tFrame.Count > m_tFrame.LastFrame)
+		if (m_tFrame.Count >= m_tFrame.LastFrame)
 		{
 			//** 크다면 다시 초기 이미지 값으로 되돌려 출력하게 한다.
 			m_tFrame.Count = m_tFrame.StartFrame;

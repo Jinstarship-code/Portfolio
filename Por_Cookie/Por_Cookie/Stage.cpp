@@ -22,7 +22,7 @@ Stage::~Stage()
 void Stage::Initialize(void)
 {
 	string strKey = "BackGround_";
-	strKey.push_back(48 + (rand()%2+1)); //48이 아스키코드 0임.
+	strKey.push_back(48 +1); //48이 아스키코드 0임.
 
 	m_pBackGround[0] = ObjectFactory<BackGround>::CreateObject(0, 0, strKey);
 	m_pBackGround[1] = ObjectFactory<BackGround>::CreateObject(WINSIZEX, 0, strKey);
@@ -31,23 +31,23 @@ void Stage::Initialize(void)
 	/*********************************
 	   **  Stage image is insert. **
 	**********************************/
-	for (int i = 1; i < 2; i++)
-	{
+	
 		TCHAR pBuffer[128];
 
-		wsprintf(pBuffer, TEXT("../Resource/Image/Stage/%02d.bmp"), i);
+		wsprintf(pBuffer, TEXT("../Resource/Image/Stage/%02d.bmp"), 1);
 
 		string str = "BackGround_";
-		str.push_back(48+i);
+		str.push_back(48+1);
 
 		m_ImageList[str] = (new Bitmap)->LoadBmp(pBuffer);
-	}
-
+	
+	m_ImageList["Backbuffer"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Backbuffer.bmp");
 
 	m_ImageList["Ground"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Ground1.bmp");
 
 	m_ImageList["Player"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Player.bmp");
-	m_ImageList["Backbuffer"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Backbuffer.bmp");
+
+	
 	//플레이어 생성후 오브젝트 매니저에 추가
 	
 	Object* pGround = ObjectFactory<Ground>::CreateObject();
@@ -74,8 +74,7 @@ int Stage::Progress(void)
 
 void Stage::Render(HDC _hdc)
 {
-	for(int i=0;i<2;i++)
-		m_pBackGround[i]->Render(m_ImageList["Backbuffer"]->GetMemDC());
+	m_pBackGround[1]->Render(m_ImageList["Backbuffer"]->GetMemDC());
 	//** 스테이지 이미지가 출력된 버퍼 위에 오브젝트 이미지를 출력함.
 	ObjectManager::GetInstance()->Render(m_ImageList["Backbuffer"]->GetMemDC());
 
@@ -88,7 +87,6 @@ void Stage::Render(HDC _hdc)
 		0, 0,	// 출력 시작점 좌표
 		SRCCOPY);	// 고속 복사
 
-	ObjectManager::GetInstance()->Render(_hdc);
 }
 
 void Stage::Release(void)

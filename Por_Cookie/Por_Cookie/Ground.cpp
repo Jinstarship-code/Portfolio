@@ -17,7 +17,7 @@ void Ground::Initialize(void)
 	m_tTransPos.Scale = Vector2(WINSIZEX,WINSIZEY);
 
 	//m_fSpeed = 5.f;
-	m_strKey = "Ground1";
+	m_strKey = "Ground";
 }
 
 int Ground::Progress(void)
@@ -41,6 +41,7 @@ void Ground::Render(HDC _hdc)
         (int)m_tTransPos.Scale.fX, 		// 출력할 이미지의 크기 만큼 X
         (int)m_tTransPos.Scale.fY,		// 출력할 이미지의 크기 만큼 Y
         RGB(255, 0, 255));		// 해당 색상을 제외
+
 }
 
 void Ground::Release(void)
