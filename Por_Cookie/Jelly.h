@@ -7,6 +7,9 @@ public:
     Jelly();
     virtual ~Jelly();
 
+private:
+    RECT rc;
+
 public:
     virtual void Initialize(void)override;
     virtual int Progress(void)override;

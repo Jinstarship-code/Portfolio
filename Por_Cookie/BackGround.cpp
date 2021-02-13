@@ -16,7 +16,7 @@ void BackGround::Initialize(void)
     m_tTransPos.Scale = Vector2(WINSIZEX, WINSIZEY);
 
     m_fAngle = 0.f;
-    m_fSpeed = 3.f;
+    m_fSpeed = 0.25f;
     m_strKey = "BackGround_1";
 }
 
@@ -24,7 +24,7 @@ int BackGround::Progress(void)
 {
     m_tTransPos.Position.fX -= m_fSpeed;
 
-    if (m_tTransPos.Position.fX+WINSIZEX <= 0)
+    if (m_tTransPos.Position.fX+WINSIZEX < 0)
         m_tTransPos.Position.fX = WINSIZEX;
     return 0;
 }

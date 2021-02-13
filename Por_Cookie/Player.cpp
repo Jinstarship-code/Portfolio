@@ -21,9 +21,9 @@ Player::~Player()
 void Player::Initialize(void)
 {
 	m_ptMouse = { 0, 0 };
-	m_tTransPos.Position = Vector2(0.f,300.f);
+	m_tTransPos.Position = Vector2(0.f,400.f);
 	m_tTransPos.Rotation = Vector2(0.f, 0.f);
-	m_tTransPos.Scale = Vector2(1140/3.f,286.f);
+	m_tTransPos.Scale = Vector2(2280/6.f,286.f);
 	//3520*1920
 	//1140*570
 	m_tFrame = Frame(0, 0, 5, 0, 50);
@@ -58,8 +58,9 @@ void Player::Initialize(void)
 	m_bMove = false;
 	m_bJump = false;
 	m_bDJump = false;
-	
 
+	RecPlayer = { 0,300,150,586 };
+	
 	//** 출력 프레임을 제어할 시간.
 	m_dwFrameTime = GetTickCount64();
 }
@@ -81,6 +82,8 @@ int Player::Progress(void)
 			m_fDTime += 0.1f;
 			m_tTransPos.Position.fY += -sinf(90 * PI / 180) * 5 + (0.98f * m_fDTime * m_fDTime) / 2;
 		
+			RecPlayer.top += -sinf(90 * PI / 180) * 5 + (0.98f * m_fDTime * m_fDTime) / 2;
+			RecPlayer.bottom += -sinf(90 * PI / 180) * 5 + (0.98f * m_fDTime * m_fDTime) / 2;
 			if (m_fDOldY < m_tTransPos.Position.fY)
 			{
 				m_fDTime = 0.0f;
@@ -134,8 +137,8 @@ void Player::Render(HDC _hdc)
 		(int)m_tTransPos.Scale.fX, 			// 출력할 이미지의 크기 만큼 X
 		(int)m_tTransPos.Scale.fY,			// 출력할 이미지의 크기 만큼 Y
 		RGB(255, 0, 255));		// 해당 색상을 제외
-
 	
+	//Rectangle(_hdc, RecPlayer.left, RecPlayer.top, RecPlayer.right, RecPlayer.bottom);
 }
 
 void Player::Release(void)
@@ -158,6 +161,8 @@ void Player::CheckKey()
 				m_fDTime = 0.f;
 			}
 		}*/
+
+
 		if (!m_bJump)
 		{
 			m_bJump = true;
@@ -173,6 +178,5 @@ void Player::CheckKey()
 
 			}
 		}
-		
 	}
 }

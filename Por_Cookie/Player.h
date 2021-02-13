@@ -6,6 +6,7 @@ class Player : public Object
 private:
 	//** 플레이어 포신 이었던것.
 	Vector2 m_LinePoint;
+	RECT RecPlayer;
 
 	//** 마우스 클릭 이동
 	Vector2 m_Direction;
@@ -30,6 +31,9 @@ public:
 public:
 	void CheckKey();
 	void SetMoveFalse() { m_bMove = false; }
+	//int RecPlayerColl() { return RecPlayer.right; }
+	
+
 public:
 	Player();
 	virtual ~Player();

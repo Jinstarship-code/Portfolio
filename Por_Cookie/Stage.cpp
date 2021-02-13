@@ -10,6 +10,7 @@
 #include "BackGround.h"
 #include "BackGround.h"
 #include "HPBar.h"
+#include "Jelly.h"
 
 Stage::Stage()
 {
@@ -42,20 +43,21 @@ void Stage::Initialize(void)
 
 		m_ImageList[str] = (new Bitmap)->LoadBmp(pBuffer);
 	
+	m_ImageList["Player"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Player.bmp");
+	m_ImageList["Ground"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Ground2.bmp");
+	m_ImageList["Jelly"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Jelly1.bmp");
 	m_ImageList["Backbuffer"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Backbuffer.bmp");
 
-	m_ImageList["Ground"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Ground1.bmp");
-
-	m_ImageList["Player"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Player.bmp");
-
-	
 	//플레이어 생성후 오브젝트 매니저에 추가
+	Object* pPlayer = ObjectFactory<Player>::CreateObject();
+	ObjectManager::GetInstance()->AddObject(pPlayer->GetKey(), pPlayer);
 	
 	Object* pGround = ObjectFactory<Ground>::CreateObject();
 	ObjectManager::GetInstance()->AddObject(pGround->GetKey(), pGround);
 
-	Object* pPlayer = ObjectFactory<Player>::CreateObject();
-	ObjectManager::GetInstance()->AddObject(pPlayer->GetKey(), pPlayer);
+		Object* pJelly = ObjectFactory<Jelly>::CreateObject();
+		ObjectManager::GetInstance()->AddObject(pJelly->GetKey(), pJelly);
+	
 
 	Object* pHPBar = ObjectFactory<HPBar>::CreateObject();
 	ObjectManager::GetInstance()->AddObject(pHPBar->GetKey(), pHPBar);
@@ -99,6 +101,5 @@ void Stage::Release(void)
 		delete m_pBackGround[i];
 		m_pBackGround[i] = NULL;
 	}
-
 	ObjectManager::GetInstance()->Release();
 }
