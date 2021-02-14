@@ -55,8 +55,8 @@ void Stage::Initialize(void)
 	Object* pGround = ObjectFactory<Ground>::CreateObject();
 	ObjectManager::GetInstance()->AddObject(pGround->GetKey(), pGround);
 
-		Object* pJelly = ObjectFactory<Jelly>::CreateObject();
-		ObjectManager::GetInstance()->AddObject(pJelly->GetKey(), pJelly);
+	Object* pJelly = ObjectFactory<Jelly>::CreateObject();
+	ObjectManager::GetInstance()->AddObject(pJelly->GetKey(), pJelly);
 	
 
 	Object* pHPBar = ObjectFactory<HPBar>::CreateObject();
