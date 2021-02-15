@@ -10,17 +10,18 @@ Jelly::Jelly()
 
 Jelly::~Jelly()
 {
+	Release();
 }
 
 void Jelly::Initialize(void)
 {
-    m_tTransPos.Position = Vector2(500.f,400.f);
+    m_tTransPos.Position = Vector2(0.f,0.f);
     m_tTransPos.Rotation = Vector2(0.f, 0.f);
     m_tTransPos.Scale = Vector2(53.f, 50.f);
 	m_fSpeed = 0.f;
     m_strKey = "Jelly";
 
-	
+	//500,400,53,50
 	
 }
 
@@ -30,7 +31,6 @@ int Jelly::Progress(void)
 
 	m_tTransPos.Position.fX -= m_fSpeed;
 
-	
     return 0;
 }
 
@@ -41,8 +41,8 @@ void Jelly::Render(HDC _hdc)
 	TransparentBlt(_hdc,					// 복사해 넣을 그림판 ?!
 		m_tTransPos.Position.fX,			// 복사할 영역 시작점 X
 		m_tTransPos.Position.fY, 			// 복사할 영역 시작점 Y
-		/*m_tTransPos.Position.fX +*/m_tTransPos.Scale.fX,	// 복사할 영역 끝부분 X
-		/*m_tTransPos.Position.fY+*/ m_tTransPos.Scale.fY,  // 복사할 영역 끝부분 Y
+		/*m_tTransPos.Position.fX+*/m_tTransPos.Scale.fX,	// 복사할 영역 끝부분 X
+		/*m_tTransPos.Position.fY+*/m_tTransPos.Scale.fY,   // 복사할 영역 끝부분 Y
 		(*m_ImageList)[m_strKey]->GetMemDC(),				// 복사할 이미지 (복사대상)
 		(int)0 * m_tTransPos.Scale.fX,		// 복사할 시작점 X
 		(int)0 * m_tTransPos.Scale.fY,		// 복사할 시작점 Y
@@ -57,5 +57,6 @@ void Jelly::Render(HDC _hdc)
 
 void Jelly::Release(void)
 {
-	
+
+
 }
