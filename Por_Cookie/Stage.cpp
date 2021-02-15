@@ -11,6 +11,7 @@
 #include "BackGround.h"
 #include "HPBar.h"
 #include "Jelly.h"
+#include "Obstacle1.h"
 
 Stage::Stage()
 {
@@ -46,18 +47,34 @@ void Stage::Initialize(void)
 	m_ImageList["Player"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Player.bmp");
 	m_ImageList["Ground"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Ground2.bmp");
 	m_ImageList["Jelly"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Jelly1.bmp");
+	m_ImageList["Obstacle1"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Obstacle1.bmp");
+	m_ImageList["HPBar"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/HpBar.bmp");
 	m_ImageList["Backbuffer"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Backbuffer.bmp");
-
 	//플레이어 생성후 오브젝트 매니저에 추가
+
 	Object* pPlayer = ObjectFactory<Player>::CreateObject();
 	ObjectManager::GetInstance()->AddObject(pPlayer->GetKey(), pPlayer);
 	
 	Object* pGround = ObjectFactory<Ground>::CreateObject();
 	ObjectManager::GetInstance()->AddObject(pGround->GetKey(), pGround);
 
-	Object* pJelly = ObjectFactory<Jelly>::CreateObject();
-	ObjectManager::GetInstance()->AddObject(pJelly->GetKey(), pJelly);
 	
+	for (int i = 0; i < 5; i++)
+	{
+		Object* pJelly = ObjectFactory<Jelly>::CreateObject(
+		500.f+53*i,400.f);
+	
+		//500,400,53,50
+		ObjectManager::GetInstance()->AddObject(pJelly->GetKey(), pJelly);
+	}
+
+	for (int i = 0; i < 3; i++)
+	{
+		Object* pObstacle1 = ObjectFactory<Obstacle1>::CreateObject(
+			500.f + 300 * i, 300.f);
+
+		ObjectManager::GetInstance()->AddObject(pObstacle1->GetKey(), pObstacle1);
+	}
 
 	Object* pHPBar = ObjectFactory<HPBar>::CreateObject();
 	ObjectManager::GetInstance()->AddObject(pHPBar->GetKey(), pHPBar);
@@ -91,7 +108,6 @@ void Stage::Render(HDC _hdc)
 		m_ImageList["Backbuffer"]->GetMemDC(),	//** 복사할 이미지
 		0, 0,	// 출력 시작점 좌표
 		SRCCOPY);	// 고속 복사
-
 }
 
 void Stage::Release(void)

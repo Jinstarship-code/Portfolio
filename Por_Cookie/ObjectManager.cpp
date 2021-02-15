@@ -2,6 +2,8 @@
 #include "Player.h"
 #include "CollisionManager.h"
 #include "SceneManager.h"
+#include "Jelly.h"
+#include "Obstacle1.h"
 
 ObjectManager* ObjectManager::m_pInstance = NULL;
 
@@ -37,30 +39,29 @@ void ObjectManager::Progress(void)
 		for (list<Object*>::iterator iter2 = iter->second.begin();
 			iter2 != iter->second.end(); ++iter2)
 		{
+			//오브젝트들의 progress를 진행 하고
 			(*iter2)->Progress();
 		}
 	}
-
-	/*
+	// 여기서 충돌 처리를 한다...??
+	
 	map<string, list<Object*>>::iterator iterPlayer = m_mapObjectList.find("Player");
-	map<string, list<Object*>>::iterator iterMonster = m_mapObjectList.find("Monster");
+	map<string, list<Object*>>::iterator iterJelly = m_mapObjectList.find("Jelly");
 
-	for (list<Object*>::iterator iter = iterMonster->second.begin();
-		iter != iterMonster->second.end(); )
+	for (list<Object*>::iterator iter = iterJelly->second.begin();
+		iter != iterJelly->second.end(); )
 	{
 		if (CollisionManager::CollRect(iterPlayer->second.front(), (*iter)))
 		{
-			iter = iterMonster->second.erase(iter);
+			iter = iterJelly->second.erase(iter);
 
 			Object* pObj = iterPlayer->second.front();
 
 			//((Player*)pObj)->SetMoveFalse();
-
 		}
 		else
 			++iter;
 	}
-	*/
 }
 
 void ObjectManager::Render(HDC _hdc)
