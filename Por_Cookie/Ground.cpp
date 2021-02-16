@@ -12,9 +12,9 @@ Ground::~Ground()
 
 void Ground::Initialize(void)
 {
-	m_tTransPos.Position = Vector2(0.f, 0.f);
+	m_tTransPos.Position = Vector2(0.f, 626.f);
 	m_tTransPos.Rotation = Vector2(0.f, 0.f);
-	m_tTransPos.Scale = Vector2(5216,WINSIZEY);
+	m_tTransPos.Scale = Vector2(5097.f,94.f);
 
 	m_fSpeed = 5.f;
 	m_strKey = "Ground";
@@ -41,7 +41,7 @@ void Ground::Render(HDC _hdc)
         m_tTransPos.Position.fX,	// 복사할 영역 시작점 X
         m_tTransPos.Position.fY, 	// 복사할 영역 시작점 Y
         /*m_tTransPos.Position.fX*/ +m_tTransPos.Scale.fX,	// 복사할 영역 끝부분 X
-        m_tTransPos.Position.fY + m_tTransPos.Scale.fY, // 복사할 영역 끝부분 Y
+        /*m_tTransPos.Position.fY*/ + m_tTransPos.Scale.fY, // 복사할 영역 끝부분 Y
         (*m_ImageList)[m_strKey]->GetMemDC(),	// 복사할 이미지 (복사대상)
         (int)0 * m_tTransPos.Scale.fX,		// 복사할 시작점 X
         (int)0 * m_tTransPos.Scale.fY,		// 복사할 시작점 Y

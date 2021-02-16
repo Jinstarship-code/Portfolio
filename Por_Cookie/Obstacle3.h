@@ -1,12 +1,12 @@
 #pragma once
 #include "Object.h"
 
-class Obstacle1 :
+class Obstacle3 :
     public Object
 {
 public:
-    Obstacle1();
-    virtual ~Obstacle1();
+    Obstacle3();
+    virtual ~Obstacle3();
 
 private:
     RECT rc;
@@ -17,11 +17,3 @@ public:
     virtual void Render(HDC _hdc)override;
     virtual void Release(void)override;
 };
-
-
-/****
-
-Obstacle1 :  바닥에 피클이 꽂혀있는 장애물
-
-
-***/

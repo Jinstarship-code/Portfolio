@@ -12,6 +12,9 @@
 #include "HPBar.h"
 #include "Jelly.h"
 #include "Obstacle1.h"
+#include "Obstacle2.h"
+#include "Obstacle3.h"
+#include "SliverCoin.h"
 
 Stage::Stage()
 {
@@ -49,6 +52,7 @@ void Stage::Initialize(void)
 	m_ImageList["Jelly"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Jelly1.bmp");
 	m_ImageList["Obstacle1"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Obstacle1.bmp");
 	m_ImageList["HPBar"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/HpBar.bmp");
+	m_ImageList["SliverCoin"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/SliverCoin.bmp");
 	m_ImageList["Backbuffer"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Backbuffer.bmp");
 	//플레이어 생성후 오브젝트 매니저에 추가
 
@@ -59,22 +63,45 @@ void Stage::Initialize(void)
 	ObjectManager::GetInstance()->AddObject(pGround->GetKey(), pGround);
 
 	
-	for (int i = 0; i < 5; i++)
+
+	/*****************
+	BaseJelly 오브젝트 생성
+	******************/
+
+	for (int i = 0; i < 8; i++)
 	{
 		Object* pJelly = ObjectFactory<Jelly>::CreateObject(
-		500.f+53*i,400.f);
+		1000.f+53*i,534.f);
 	
 		//500,400,53,50
+
+		//바닥의 위치 y = 625.f
+
 		ObjectManager::GetInstance()->AddObject(pJelly->GetKey(), pJelly);
 	}
+
+	for (int i = 0; i < 2; i++)
+	{
+		Object* pSliverCoin = ObjectFactory<SliverCoin>::CreateObject(
+			1421 + 49.5f * i, 534.f);
+
+		ObjectManager::GetInstance()->AddObject(pSliverCoin->GetKey(), pSliverCoin);
+	}
+
+	/********************
+	Obstacle1 오브젝트 생성.
+	*********************/
 
 	for (int i = 0; i < 3; i++)
 	{
 		Object* pObstacle1 = ObjectFactory<Obstacle1>::CreateObject(
-			500.f + 300 * i, 300.f);
+			1600.f + 1000 * i, 526.f);
 
 		ObjectManager::GetInstance()->AddObject(pObstacle1->GetKey(), pObstacle1);
 	}
+
+
+
 
 	Object* pHPBar = ObjectFactory<HPBar>::CreateObject();
 	ObjectManager::GetInstance()->AddObject(pHPBar->GetKey(), pHPBar);
@@ -82,6 +109,10 @@ void Stage::Initialize(void)
 	Object* pBackGround = ObjectFactory<BackGround>::CreateObject();
 	ObjectManager::GetInstance()->AddObject(pBackGround->GetKey(), pBackGround);
 	
+
+
+
+
 	Object::SetImageList(&m_ImageList);
 }
 

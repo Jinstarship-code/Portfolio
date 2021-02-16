@@ -1,38 +1,34 @@
-#include "Obstacle1.h"
-#include "ObjectFactory.h"
-#include "ObjectManager.h"
-#include "Player.h"
-#include "CollisionManager.h"
+#include "Obstacle2.h"
 
-Obstacle1::Obstacle1()
+
+
+Obstacle2::Obstacle2()
 {
 }
 
-Obstacle1::~Obstacle1()
+Obstacle2::~Obstacle2()
 {
-	Release();
 }
 
-void Obstacle1::Initialize(void)
+void Obstacle2::Initialize(void)
 {
 	m_tTransPos.Position = Vector2(0.f, 0.f);
 	m_tTransPos.Rotation = Vector2(0.f, 0.f);
-	m_tTransPos.Scale = Vector2(72.f, 99.f);
+	m_tTransPos.Scale = Vector2(70.f, 98.f);
 	m_fSpeed = 0.f;
-	m_strKey = "Obstacle1";
+	m_strKey = "Obstacle2";
 }
 
-int Obstacle1::Progress(void)
+int Obstacle2::Progress(void)
 {
 
 	m_fSpeed = 5.f;
 
 	m_tTransPos.Position.fX -= m_fSpeed;
-
 	return 0;
 }
 
-void Obstacle1::Render(HDC _hdc)
+void Obstacle2::Render(HDC _hdc)
 {
 	//** Menu 백그라운드 이미지를 버퍼에 출력함.
 	TransparentBlt(_hdc,					// 복사해 넣을 그림판 ?!
@@ -49,6 +45,6 @@ void Obstacle1::Render(HDC _hdc)
 
 }
 
-void Obstacle1::Release(void)
+void Obstacle2::Release(void)
 {
 }
