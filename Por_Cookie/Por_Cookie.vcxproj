@@ -167,6 +167,7 @@
     <ClInclude Include="Obstacle1.h" />
     <ClInclude Include="Obstacle2.h" />
     <ClInclude Include="Obstacle3.h" />
+    <ClInclude Include="Pause_Button.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Por_Cookie.h" />
     <ClInclude Include="Resource.h" />
@@ -194,6 +195,7 @@
     <ClCompile Include="Obstacle1.cpp" />
     <ClCompile Include="Obstacle2.cpp" />
     <ClCompile Include="Obstacle3.cpp" />
+    <ClCompile Include="Pause_Button.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Por_Cookie.cpp" />
     <ClCompile Include="Scene.cpp" />

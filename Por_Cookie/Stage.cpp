@@ -15,6 +15,7 @@
 #include "Obstacle2.h"
 #include "Obstacle3.h"
 #include "SliverCoin.h"
+#include "Pause_Button.h"
 
 Stage::Stage()
 {
@@ -51,8 +52,9 @@ void Stage::Initialize(void)
 	m_ImageList["Ground"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Ground2.bmp");
 	m_ImageList["Jelly"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Jelly1.bmp");
 	m_ImageList["Obstacle1"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Obstacle1.bmp");
-	m_ImageList["HPBar"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/HpBar.bmp");
+	//m_ImageList["HPBar"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/HpBar.bmp");
 	m_ImageList["SliverCoin"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/SliverCoin.bmp");
+	m_ImageList["Pause_Button"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Pause_Button.bmp");
 	m_ImageList["Backbuffer"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Backbuffer.bmp");
 	//플레이어 생성후 오브젝트 매니저에 추가
 
@@ -80,13 +82,74 @@ void Stage::Initialize(void)
 		ObjectManager::GetInstance()->AddObject(pJelly->GetKey(), pJelly);
 	}
 
-	for (int i = 0; i < 2; i++)
-	{
-		Object* pSliverCoin = ObjectFactory<SliverCoin>::CreateObject(
-			1421 + 49.5f * i, 534.f);
 
-		ObjectManager::GetInstance()->AddObject(pSliverCoin->GetKey(), pSliverCoin);
+	//첫번째 실버 코인.
+	for (int i = 0; i < 6; i++)
+	{
+		if (i<2||i>3)
+		{
+			Object* pSliverCoin = ObjectFactory<SliverCoin>::CreateObject(
+				1421 + 50.f * i, 534.f);
+
+			ObjectManager::GetInstance()->AddObject(pSliverCoin->GetKey(), pSliverCoin);
+		}
+		else
+		{
+			Object* pSliverCoin = ObjectFactory<SliverCoin>::CreateObject(
+				1421 + 50.f * i, 434.f);
+
+			ObjectManager::GetInstance()->AddObject(pSliverCoin->GetKey(), pSliverCoin);
+		}
+
 	}
+
+	//두번째 젤리라인.
+	for (int i = 0; i < 13; i++)
+	{
+		Object* pJelly = ObjectFactory<Jelly>::CreateObject(
+			1720.f + 53 * i, 534.f);
+
+		//500,400,53,50
+
+		//바닥의 위치 y = 625.f
+
+		ObjectManager::GetInstance()->AddObject(pJelly->GetKey(), pJelly);
+	}
+
+	//2번째 실버코인
+	for (int i = 0; i < 6; i++)
+	{
+		if (i < 2 || i>3)
+		{
+			Object* pSliverCoin = ObjectFactory<SliverCoin>::CreateObject(
+				2409 + 50.f * i, 534.f);
+
+			ObjectManager::GetInstance()->AddObject(pSliverCoin->GetKey(), pSliverCoin);
+		}
+		else
+		{
+			Object* pSliverCoin = ObjectFactory<SliverCoin>::CreateObject(
+				2409 + 50.f * i, 434.f);
+
+			ObjectManager::GetInstance()->AddObject(pSliverCoin->GetKey(), pSliverCoin);
+		}
+
+	}
+
+
+	//세번째 젤리라인.
+	for (int i = 0; i < 13; i++)
+	{
+		Object* pJelly = ObjectFactory<Jelly>::CreateObject(
+			2710.f + 53 * i, 534.f);
+
+		//500,400,53,50
+
+		//바닥의 위치 y = 625.f
+
+		ObjectManager::GetInstance()->AddObject(pJelly->GetKey(), pJelly);
+	}
+
 
 	/********************
 	Obstacle1 오브젝트 생성.
@@ -95,7 +158,7 @@ void Stage::Initialize(void)
 	for (int i = 0; i < 3; i++)
 	{
 		Object* pObstacle1 = ObjectFactory<Obstacle1>::CreateObject(
-			1600.f + 1000 * i, 526.f);
+			1540.f + 1000 * i, 526.f);
 
 		ObjectManager::GetInstance()->AddObject(pObstacle1->GetKey(), pObstacle1);
 	}
@@ -103,8 +166,11 @@ void Stage::Initialize(void)
 
 
 
-	Object* pHPBar = ObjectFactory<HPBar>::CreateObject();
-	ObjectManager::GetInstance()->AddObject(pHPBar->GetKey(), pHPBar);
+	/*Object* pHPBar = ObjectFactory<HPBar>::CreateObject();
+	ObjectManager::GetInstance()->AddObject(pHPBar->GetKey(), pHPBar);*/
+
+	Object* pPause_Button = ObjectFactory<Pause_Button>::CreateObject();
+	ObjectManager::GetInstance()->AddObject(pPause_Button->GetKey(), pPause_Button);
 
 	Object* pBackGround = ObjectFactory<BackGround>::CreateObject();
 	ObjectManager::GetInstance()->AddObject(pBackGround->GetKey(), pBackGround);

@@ -36,7 +36,7 @@ public:
 	float GetAngle()	const { return m_fAngle; }
 	void SetAngle(float _Angle) { m_fAngle = _Angle; }
 
-	Vector2 GetPosition()	const { return m_tTransPos.Position; }
+	Vector2 GetPosition()	{ return m_tTransPos.Position; }
 	void SetPosition(float _fx, float _fy)
 	{
 		m_tTransPos.Position.fX = _fx;

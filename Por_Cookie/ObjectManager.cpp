@@ -60,8 +60,9 @@ void ObjectManager::Progress(void)
 
 			Object* pObj = iterPlayer->second.front();
 
-			//((Player*)pObj)->SetMoveFalse();
+		
 		}
+		
 		else
 			++iter;
 	}
@@ -69,10 +70,47 @@ void ObjectManager::Progress(void)
 
 	/***************************
 	플레이어와 장애물과의 충돌처리
+
+	- 오브젝트를 지워버리지 않고 쓰면 게임이 터진다...
+
 	****************************/
+	//map<string, list<Object*>>::iterator iterObstacle1 = m_mapObjectList.find("Obstacle1");
 
+	//for (list<Object*>::iterator iter = iterObstacle1->second.begin();
+	//	iter != iterObstacle1->second.end(); )
+	//{
+	//	if (CollisionManager::CollRect(iterPlayer->second.front(), (*iter)))
+	//	{
+	//		
 
+	//		Object* pObj = iterPlayer->second.front();
 
+	//		//((Player*)pObj)->SetMoveFalse();
+	//	}
+	//	else
+	//		++iter;
+	//}
+
+	/***************************
+	플레이어와 코인과의 충돌처리
+	****************************/
+	
+	map<string, list<Object*>>::iterator iterSliverCoin = m_mapObjectList.find("SliverCoin");
+
+	for (list<Object*>::iterator iter = iterSliverCoin->second.begin();
+		iter != iterSliverCoin->second.end(); )
+	{
+		if (CollisionManager::Collision(iterPlayer->second.front(), (*iter)))
+		{
+			iter = iterSliverCoin->second.erase(iter);
+
+			Object* pObj = iterPlayer->second.front();
+
+			//((Player*)pObj)->SetMoveFalse();
+		}
+		else
+			++iter;
+	}
 
 
 }

@@ -1,15 +1,15 @@
 #pragma once
 #include "Object.h"
-class Jelly :
+class Pause_Button :
     public Object
 {
 public:
-    Jelly();
-    virtual ~Jelly();
+    Pause_Button();
+    virtual ~Pause_Button();
 
 private:
-   // RECT rc;
-
+    // RECT rc;
+    bool m_bPause;
 public:
     virtual void Initialize(void)override;
     virtual int Progress(void)override;
@@ -17,6 +17,6 @@ public:
     virtual void Release(void)override;
 
 public:
-
+    void CheckPause(void);
 };
 

@@ -115,6 +115,9 @@
     <Filter Include="소스 파일\01. Object\Stage\Coin\GoldCoin">
       <UniqueIdentifier>{eea48d67-0259-4132-a4fb-ace895f5c7a4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\01. Object\Stage\Button">
+      <UniqueIdentifier>{ec4e6ad2-19de-4c0f-a348-742ddb4ffcdb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -213,6 +216,9 @@
     <ClInclude Include="SliverCoin.h">
       <Filter>소스 파일\01. Object\Stage\Coin\SliverCoin</Filter>
     </ClInclude>
+    <ClInclude Include="Pause_Button.h">
+      <Filter>소스 파일\01. Object\Stage\Button</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Por_Cookie.cpp">
@@ -280,6 +286,9 @@
     </ClCompile>
     <ClCompile Include="SliverCoin.cpp">
       <Filter>소스 파일\01. Object\Stage\Coin\SliverCoin</Filter>
+    </ClCompile>
+    <ClCompile Include="Pause_Button.cpp">
+      <Filter>소스 파일\01. Object\Stage\Button</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
