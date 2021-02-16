@@ -45,6 +45,9 @@ void ObjectManager::Progress(void)
 	}
 	// 여기서 충돌 처리를 한다...??
 	
+	/***********************
+	젤리와 플레이어의 충돌처리
+	************************/
 	map<string, list<Object*>>::iterator iterPlayer = m_mapObjectList.find("Player");
 	map<string, list<Object*>>::iterator iterJelly = m_mapObjectList.find("Jelly");
 
@@ -62,6 +65,16 @@ void ObjectManager::Progress(void)
 		else
 			++iter;
 	}
+
+
+	/***************************
+	플레이어와 장애물과의 충돌처리
+	****************************/
+
+
+
+
+
 }
 
 void ObjectManager::Render(HDC _hdc)
@@ -88,7 +101,9 @@ void ObjectManager::Release(void)
 			delete (*iter2);
 			(*iter2) = NULL;
 		}
+
 		iter->second.clear();
 	}
+
 	m_mapObjectList.clear();
 }

@@ -27,7 +27,7 @@ void Jelly::Initialize(void)
 
 int Jelly::Progress(void)
 {
-	m_fSpeed = 3.f;
+	m_fSpeed = 5.f;
 
 	m_tTransPos.Position.fX -= m_fSpeed;
 

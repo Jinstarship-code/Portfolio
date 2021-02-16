@@ -21,9 +21,9 @@ Player::~Player()
 void Player::Initialize(void)
 {
 	m_ptMouse = { 0, 0 };
-	m_tTransPos.Position = Vector2(0.f,400.f);
+	m_tTransPos.Position = Vector2(0.f,443.f);
 	m_tTransPos.Rotation = Vector2(0.f, 0.f);
-	m_tTransPos.Scale = Vector2(2280/6.f,286.f);
+	m_tTransPos.Scale = Vector2(2280/6.f,182.f);
 	//3520*1920
 	//1140*570
 	m_tFrame = Frame(0, 0, 5, 0, 50);
@@ -94,7 +94,7 @@ int Player::Progress(void)
 		}
 
 
-		m_tTransPos.Position.fY += -sinf(90 * PI / 180) * 5 + (0.98f * m_fTime * m_fTime) / 2;
+		m_tTransPos.Position.fY += -sinf(90 * PI / 180) * 7 + (0.98f * m_fTime * m_fTime) / 2;
 
 
 		if (m_fOldY < m_tTransPos.Position.fY)
