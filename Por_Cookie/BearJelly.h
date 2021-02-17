@@ -1,15 +1,16 @@
 #pragma once
 #include "Object.h"
 
-class BaseJelly :
+class BearJelly :
     public Object
 {
+
 public:
-    BaseJelly();
-    virtual ~BaseJelly();
+    BearJelly();
+    virtual ~BearJelly();
 
 private:
-   // RECT rc;
+    // RECT rc;
 
 public:
     virtual void Initialize(void)override;
@@ -17,7 +18,7 @@ public:
     virtual void Render(HDC _hdc)override;
     virtual void Release(void)override;
 
-public:
+
 
 };
 

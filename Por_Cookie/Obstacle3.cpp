@@ -12,7 +12,7 @@ void Obstacle3::Initialize(void)
 {
 	m_tTransPos.Position = Vector2(0.f, 0.f);
 	m_tTransPos.Rotation = Vector2(0.f, 0.f);
-	m_tTransPos.Scale = Vector2(70.f, 98.f);
+	m_tTransPos.Scale = Vector2(180.f, 525.f);
 	m_fSpeed = 0.f;
 	m_strKey = "Obstacle3";
 }

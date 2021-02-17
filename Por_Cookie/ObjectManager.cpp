@@ -31,8 +31,13 @@ void ObjectManager::AddObject(string _strKey, Object* _Object)
 		iter->second.push_back(_Object);
 }
 
+int a = 0;
 void ObjectManager::Progress(void)
 {
+
+
+	
+
 	for (map<string, list<Object*>>::iterator iter = m_mapObjectList.begin();
 		iter != m_mapObjectList.end(); ++iter)
 	{
@@ -49,7 +54,7 @@ void ObjectManager::Progress(void)
 	젤리와 플레이어의 충돌처리
 	************************/
 	map<string, list<Object*>>::iterator iterPlayer = m_mapObjectList.find("Player");
-	map<string, list<Object*>>::iterator iterJelly = m_mapObjectList.find("Jelly");
+	map<string, list<Object*>>::iterator iterJelly = m_mapObjectList.find("BaseJelly");
 
 	for (list<Object*>::iterator iter = iterJelly->second.begin();
 		iter != iterJelly->second.end(); )
@@ -59,14 +64,15 @@ void ObjectManager::Progress(void)
 			iter = iterJelly->second.erase(iter);
 
 			Object* pObj = iterPlayer->second.front();
-
-		
+			a++;
+			std::cout << "체리 :"<<a;
+			std::cout << endl;
 		}
 		
 		else
 			++iter;
-	}
 
+	}
 
 	/***************************
 	플레이어와 장애물과의 충돌처리
@@ -91,6 +97,8 @@ void ObjectManager::Progress(void)
 	//		++iter;
 	//}
 
+
+
 	/***************************
 	플레이어와 코인과의 충돌처리
 	****************************/
@@ -100,7 +108,7 @@ void ObjectManager::Progress(void)
 	for (list<Object*>::iterator iter = iterSliverCoin->second.begin();
 		iter != iterSliverCoin->second.end(); )
 	{
-		if (CollisionManager::Collision(iterPlayer->second.front(), (*iter)))
+		if (CollisionManager::CollRect(iterPlayer->second.front(), (*iter)))
 		{
 			iter = iterSliverCoin->second.erase(iter);
 
@@ -111,6 +119,12 @@ void ObjectManager::Progress(void)
 		else
 			++iter;
 	}
+
+
+
+
+
+
 
 
 }

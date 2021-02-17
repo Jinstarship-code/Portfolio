@@ -53,7 +53,7 @@ void Player::Initialize(void)
 	m_fTime = 0.f;
 	m_fDTime = 0.f;
 	m_fAngle = 0.f;
-	m_fSpeed = 3.f;
+	m_fSpeed = 5.f;
 	m_strKey = "Player";
 	m_bMove = false;
 	m_bJump = false;

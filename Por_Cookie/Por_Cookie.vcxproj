@@ -90,8 +90,9 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>wWinMainCRTStartup</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -140,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BackGround.h" />
+    <ClInclude Include="BearJelly.h" />
     <ClInclude Include="Bitmap.h" />
     <ClInclude Include="BitmapManager.h" />
     <ClInclude Include="Bridge.h" />
@@ -180,6 +182,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BackGround.cpp" />
+    <ClCompile Include="BearJelly.cpp" />
     <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="BitmapManager.cpp" />
     <ClCompile Include="CollisionManager.cpp" />

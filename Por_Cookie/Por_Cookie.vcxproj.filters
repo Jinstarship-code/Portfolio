@@ -118,6 +118,12 @@
     <Filter Include="소스 파일\01. Object\Stage\Button">
       <UniqueIdentifier>{ec4e6ad2-19de-4c0f-a348-742ddb4ffcdb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\01. Object\Stage\Jelly\BaseJelly">
+      <UniqueIdentifier>{7070924b-4e39-435f-8af7-1753be0235b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01. Object\Stage\Jelly\BearJelly">
+      <UniqueIdentifier>{29b6323a-68cf-4811-8ee5-c3a1b9e3046a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -201,9 +207,6 @@
     <ClInclude Include="Obstacle1.h">
       <Filter>소스 파일\01. Object\Stage\Obstacle\Obstacle1</Filter>
     </ClInclude>
-    <ClInclude Include="Jelly.h">
-      <Filter>소스 파일\01. Object\Stage\Jelly</Filter>
-    </ClInclude>
     <ClInclude Include="HPBar.h">
       <Filter>소스 파일\01. Object\Stage\Hp_Bar</Filter>
     </ClInclude>
@@ -218,6 +221,12 @@
     </ClInclude>
     <ClInclude Include="Pause_Button.h">
       <Filter>소스 파일\01. Object\Stage\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="Jelly.h">
+      <Filter>소스 파일\01. Object\Stage\Jelly\BaseJelly</Filter>
+    </ClInclude>
+    <ClInclude Include="BearJelly.h">
+      <Filter>소스 파일\01. Object\Stage\Jelly\BearJelly</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -269,9 +278,6 @@
     <ClCompile Include="Obstacle1.cpp">
       <Filter>소스 파일\01. Object\Stage\Obstacle\Obstacle1</Filter>
     </ClCompile>
-    <ClCompile Include="Jelly.cpp">
-      <Filter>소스 파일\01. Object\Stage\Jelly</Filter>
-    </ClCompile>
     <ClCompile Include="HPBar.cpp">
       <Filter>소스 파일\01. Object\Stage\Hp_Bar</Filter>
     </ClCompile>
@@ -289,6 +295,12 @@
     </ClCompile>
     <ClCompile Include="Pause_Button.cpp">
       <Filter>소스 파일\01. Object\Stage\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="Jelly.cpp">
+      <Filter>소스 파일\01. Object\Stage\Jelly\BaseJelly</Filter>
+    </ClCompile>
+    <ClCompile Include="BearJelly.cpp">
+      <Filter>소스 파일\01. Object\Stage\Jelly\BearJelly</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

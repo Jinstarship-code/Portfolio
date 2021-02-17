@@ -1,42 +1,32 @@
-#include "Jelly.h"
-#include "ObjectFactory.h"
-#include "ObjectManager.h"
-#include "Player.h"
-#include "CollisionManager.h"
+#include "BearJelly.h"
 
-BaseJelly::BaseJelly()
+BearJelly::BearJelly()
 {
 }
 
-BaseJelly::~BaseJelly()
+BearJelly::~BearJelly()
 {
-	Release();
 }
 
-void BaseJelly::Initialize(void)
+void BearJelly::Initialize(void)
 {
-    m_tTransPos.Position = Vector2(0.f,0.f);
+    m_tTransPos.Position = Vector2(0.f, 0.f);
     m_tTransPos.Rotation = Vector2(0.f, 0.f);
-    m_tTransPos.Scale = Vector2(53.f, 50.f);
-	m_fSpeed = 0.f;
-    m_strKey = "BaseJelly";
-
-	//500,400,53,50
-	
+    m_tTransPos.Scale = Vector2(55.f, 51.f);
+    m_fSpeed = 0.f;
+    m_strKey = "BearJelly";
 }
 
-int BaseJelly::Progress(void)
+int BearJelly::Progress(void)
 {
-	m_fSpeed = 5.f;
+    m_fSpeed = 5.f;
 
-	m_tTransPos.Position.fX -= m_fSpeed;
-
+    m_tTransPos.Position.fX -= m_fSpeed;
     return 0;
 }
 
-void BaseJelly::Render(HDC _hdc)
+void BearJelly::Render(HDC _hdc)
 {
-	
 	//** Menu 백그라운드 이미지를 버퍼에 출력함.
 	TransparentBlt(_hdc,					// 복사해 넣을 그림판 ?!
 		m_tTransPos.Position.fX,			// 복사할 영역 시작점 X
@@ -49,14 +39,8 @@ void BaseJelly::Render(HDC _hdc)
 		(int)m_tTransPos.Scale.fX, 			// 출력할 이미지의 크기 만큼 X
 		(int)m_tTransPos.Scale.fY,			// 출력할 이미지의 크기 만큼 Y
 		RGB(255, 0, 255));					// 해당 색상을 제외
-	
-		
-	//Rectangle(_hdc, rc.left, rc.top, rc.right, rc.bottom);
-		
 }
 
-void BaseJelly::Release(void)
+void BearJelly::Release(void)
 {
-
-
 }
