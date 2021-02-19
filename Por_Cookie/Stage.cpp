@@ -92,7 +92,7 @@ void Stage::Initialize(void)
 		}
 		else
 		{
-			SCoin(1420.f + 50.f * i, 534.f);
+			SCoin(1420.f + 50.f * i, 434.f);
 		}
 
 	}
@@ -129,7 +129,7 @@ void Stage::Initialize(void)
 		if (i < 2 || i>3)
 			SCoin(3400.f + 50.f * i, 534.f);
 		else
-			SCoin(3400.f + 50.f * i, 534.f);
+			SCoin(3400.f + 50.f * i, 434.f);
 	}
 
 	/********************
@@ -138,11 +138,7 @@ void Stage::Initialize(void)
 
 	for (int i = 0; i < 3; i++)
 	{
-		Obstacle1()
-		Object* pObstacle1 = ObjectFactory<Obstacle1>::CreateObject(
-			1540.f + 1000.f * i * 0.99f, 526.f);
-
-		ObjectManager::GetInstance()->AddObject(pObstacle1->GetKey(), pObstacle1);
+		Obs1(1540.f + 1000.f * i * 0.99f, 526.f);
 	}
 
 	
@@ -162,8 +158,7 @@ void Stage::Initialize(void)
 	//슬라이드 장애물
 	for (int i = 0; i < 4; i++)
 	{
-		Object* pObstacle3 = ObjectFactory<Obstacle3>::CreateObject(4000.f + 170.f * i, 0.f);
-		ObjectManager::GetInstance()->AddObject(pObstacle3->GetKey(), pObstacle3);
+		Obs3(4000.f + 170.f * i, 0.f);
 	}
 
 
@@ -247,18 +242,18 @@ void Stage::Cherry(float x, float y)
 
 void Stage::Obs1(float x, float y)
 {
-	Object* Obstacle1 = ObjectFactory<Obstacle1>::CreateObject(x, y);
-	ObjectManager::GetInstance()->AddObject(Obstacle1->GetKey(), Obstacle1);
+	Object* pObstacle1 = ObjectFactory<Obstacle1>::CreateObject(x, y);
+	ObjectManager::GetInstance()->AddObject(pObstacle1->GetKey(), pObstacle1);
 }
 
 void Stage::Obs2(float x, float y)
 {
-	Object* Obstacle2 = ObjectFactory<Obstacle2>::CreateObject(x, y);
-	ObjectManager::GetInstance()->AddObject(Obstacle2->GetKey(), Obstacle2);
+	Object* pObstacle2 = ObjectFactory<Obstacle2>::CreateObject(x, y);
+	ObjectManager::GetInstance()->AddObject(pObstacle2->GetKey(), pObstacle2);
 }
 
 void Stage::Obs3(float x, float y)
 {
-	Object* Obstacle3 = ObjectFactory<Obstacle3>::CreateObject(x, y);
-	ObjectManager::GetInstance()->AddObject(Obstacle3->GetKey(), Obstacle3);
+	Object* pObstacle3 = ObjectFactory<Obstacle3>::CreateObject(x, y);
+	ObjectManager::GetInstance()->AddObject(pObstacle3->GetKey(), pObstacle3);
 }

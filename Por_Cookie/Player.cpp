@@ -19,33 +19,16 @@ Player::~Player()
 
 
 void Player::Initialize(void)
-{
+{//381
 	m_ptMouse = { 0, 0 };
-	m_tTransPos.Position = Vector2(0.f,443.f);
+	m_tTransPos.Position = Vector2(0.f,444.f);
 	m_tTransPos.Rotation = Vector2(0.f, 0.f);
-	m_tTransPos.Scale = Vector2(2280/6.f,182.f);
+	m_tTransPos.Scale = Vector2(2280.f/6.f,182.f);
 	//3520*1920
 	//1140*570
+
 	m_tFrame = Frame(0, 0, 5, 0, 50);
 
-	/*
-	Frame(int _StartFrame, 출력을 시작할 이미지 시작점.
-	int _Count,				시작점부터 끝지점까지 순차적으로 출력지점을 이동시켜줌
-	int _LastFrame,			출력할 이미지의 마지막 지점
-	int _SceneFrame,		점프, 이동, 공경 등의 장면을 변경 시킴
-	DWORD _FrameTime)
-
-	DWORD _FrameTime = 	장면마다 출력해야할 이미지 개수가 다르다.
-		수량에 비례하여 출력되기 때문에
-		애니매이션이 끝나는 지점을 맞춰주기 위함.
-
-		몬스터의 공격프 이미지가 5장이고
-		플레이어의 공격 이미지가 10 장이라 한다면
-		우리가 출력하는 이미지는 매 프레임마다 1장의 이미지가 출력되기 때문에
-		몬스터가 2번의 공격을 할때 플레이어는 한번의 공격을 하게된다.
-
-		이런 문제를 해결하기위해 이미지 전체가 출력되는 시간을 정해놓고 출력해야 한다. (초당 공격력으로 환산된다.)
-	*/
 
 	m_TargetPoint = Vector2(0.f, 0.f);
 	m_Direction = Vector2(0.f, 0.f);
@@ -59,7 +42,7 @@ void Player::Initialize(void)
 	m_bJump = false;
 	m_bDJump = false;
 
-	RecPlayer = { 0,300,150,586 };
+	//RecPlayer = { 0,300,150,586 };
 	
 	//** 출력 프레임을 제어할 시간.
 	m_dwFrameTime = GetTickCount64();
@@ -93,9 +76,7 @@ int Player::Progress(void)
 			}
 		}
 
-
 		m_tTransPos.Position.fY += -sinf(90 * PI / 180) * 7 + (0.98f * m_fTime * m_fTime) / 2;
-
 
 		if (m_fOldY < m_tTransPos.Position.fY)
 		{
@@ -161,7 +142,6 @@ void Player::CheckKey()
 				m_fDTime = 0.f;
 			}
 		}*/
-
 
 		if (!m_bJump)
 		{

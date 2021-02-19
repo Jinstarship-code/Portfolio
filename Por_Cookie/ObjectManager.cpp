@@ -120,13 +120,6 @@ void ObjectManager::Progress(void)
 			++iter;
 	}
 
-
-
-
-
-
-
-
 }
 
 void ObjectManager::Render(HDC _hdc)
