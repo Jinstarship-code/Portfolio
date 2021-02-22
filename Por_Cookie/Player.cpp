@@ -21,13 +21,17 @@ Player::~Player()
 void Player::Initialize(void)
 {//381
 	m_ptMouse = { 0, 0 };
-	m_tTransPos.Position = Vector2(0.f,444.f);
+	m_tTransPos.Position = Vector2(0.f,245.f);
 	m_tTransPos.Rotation = Vector2(0.f, 0.f);
-	m_tTransPos.Scale = Vector2(2280.f/6.f,182.f);
+	m_tTransPos.Scale = Vector2(6496.f/17.f,2294.f/6.f);
 	//3520*1920
 	//1140*570
+	m_iDefaultStartFrame = 0;
+	m_iDefaultCount = 0;
+	m_iDefaultScene = 1;
+	m_iDefaultLastFrame = 5;
 
-	m_tFrame = Frame(0, 0, 5, 0, 50);
+	m_tFrame = Frame(m_iDefaultStartFrame, m_iDefaultCount, m_iDefaultLastFrame, m_iDefaultScene, 50);
 
 
 	m_TargetPoint = Vector2(0.f, 0.f);
@@ -41,7 +45,7 @@ void Player::Initialize(void)
 	m_bMove = false;
 	m_bJump = false;
 	m_bDJump = false;
-
+	m_bSlide = false;
 	//RecPlayer = { 0,300,150,586 };
 	
 	//** 출력 프레임을 제어할 시간.
@@ -86,6 +90,16 @@ int Player::Progress(void)
 			m_bJump = false;
 		}
 	}
+
+	if (m_bSlide)
+	{
+		m_tFrame.StartFrame = 14;
+		m_tFrame.LastFrame = 17;
+		m_tFrame.Scene = 0;
+
+
+	}
+
 
 	//** 출력 프레임을 제어할 시간에 프레임과 프레임 간격의 시간을 더한값보다 현재 시가니 더 크다면
 	if (m_dwFrameTime + m_tFrame.FrameTime < GetTickCount64())
@@ -157,6 +171,14 @@ void Player::CheckKey()
 				}
 
 			}
+		}
+	}
+
+	if (KEY_DOWN & dwKey)
+	{
+		if (!m_bSlide)
+		{
+			m_bSlide = true;
 		}
 	}
 }

@@ -21,6 +21,12 @@ protected:
 
 	static map<string, Bitmap*>* m_ImageList;
 
+	//프레임 정리
+	int m_iDefaultStartFrame;
+	int m_iDefaultCount;
+	int m_iDefaultLastFrame;
+	int m_iDefaultScene;
+
 public:
 	static void SetImageList(map<string, Bitmap*>* _ImageList) { m_ImageList = _ImageList; }
 public:

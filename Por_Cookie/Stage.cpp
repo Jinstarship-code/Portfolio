@@ -28,9 +28,6 @@ Stage::~Stage()
 	Release();
 }
 
-
-
-
 void Stage::Initialize(void)
 {
 	string strKey = "BackGround_";
@@ -38,7 +35,6 @@ void Stage::Initialize(void)
 
 	m_pBackGround[0] = ObjectFactory<BackGround>::CreateObject(0, 0, strKey);
 	m_pBackGround[1] = ObjectFactory<BackGround>::CreateObject(WINSIZEX, 0, strKey);
-
 
 	/*********************************
 	   **  Stage image is insert. **
@@ -53,7 +49,7 @@ void Stage::Initialize(void)
 
 	m_ImageList[str] = (new Bitmap)->LoadBmp(pBuffer);
 
-	m_ImageList["Player"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Player.bmp");
+	m_ImageList["Player"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/PlayerAll.bmp");
 	m_ImageList["Ground"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Ground2.bmp");
 	m_ImageList["BaseJelly"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Jelly1.bmp");
 	m_ImageList["Obstacle1"] = (new Bitmap)->LoadBmp(L"../Resource/Image/Stage/Obstacle1.bmp");
@@ -71,8 +67,6 @@ void Stage::Initialize(void)
 
 	Object* pGround = ObjectFactory<Ground>::CreateObject();
 	ObjectManager::GetInstance()->AddObject(pGround->GetKey(), pGround);
-
-
 
 	/*****************
 	BaseJelly 오브젝트 생성
@@ -116,7 +110,6 @@ void Stage::Initialize(void)
 		}
 	}
 
-
 	//세번째 젤리라인.
 	for (int i = 0; i < 13; i++)
 	{
@@ -141,8 +134,6 @@ void Stage::Initialize(void)
 		Obs1(1540.f + 1000.f * i * 0.99f, 526.f);
 	}
 
-	
-
 	for (int i = 0; i < 17; i++)
 	{
 		if (i <= 4)
@@ -154,13 +145,11 @@ void Stage::Initialize(void)
 			Bear(3700.f + 55.f * i, 570.f);
 	}
 
-
 	//슬라이드 장애물
 	for (int i = 0; i < 4; i++)
 	{
 		Obs3(4000.f + 170.f * i, 0.f);
 	}
-
 
 	/*Object* pHPBar = ObjectFactory<HPBar>::CreateObject();
 	ObjectManager::GetInstance()->AddObject(pHPBar->GetKey(), pHPBar);*/
@@ -171,10 +160,6 @@ void Stage::Initialize(void)
 	Object* pBackGround = ObjectFactory<BackGround>::CreateObject();
 	ObjectManager::GetInstance()->AddObject(pBackGround->GetKey(), pBackGround);
 	
-
-
-
-
 	Object::SetImageList(&m_ImageList);
 }
 

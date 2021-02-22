@@ -40,7 +40,8 @@ typedef struct tagFrame
 }Frame;
 
 /*
-Frame(int _StartFrame, 출력을 시작할 이미지 시작점.
+Frame(
+int _StartFrame, 출력을 시작할 이미지 시작점.
 int _Count,				시작점부터 끝지점까지 순차적으로 출력지점을 이동시켜줌
 int _LastFrame,			출력할 이미지의 마지막 지점
 int _SceneFrame,		점프, 이동, 공경 등의 장면을 변경 시킴

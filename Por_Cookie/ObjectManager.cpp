@@ -87,10 +87,7 @@ void ObjectManager::Progress(void)
 	//{
 	//	if (CollisionManager::CollRect(iterPlayer->second.front(), (*iter)))
 	//	{
-	//		
-
 	//		Object* pObj = iterPlayer->second.front();
-
 	//		//((Player*)pObj)->SetMoveFalse();
 	//	}
 	//	else

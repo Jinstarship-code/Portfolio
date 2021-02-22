@@ -14,6 +14,9 @@ private:
 	POINT m_ptMouse;
 	bool m_bMove;
 
+	//슬라이드
+	bool m_bSlide;
+
 	//** 점프 
 	bool m_bJump;
 	float m_fOldY;
@@ -21,6 +24,7 @@ private:
 	float m_fDTime;
 	bool m_bDJump;	//더블 점프
 	float m_fDOldY; //더블 점프 위치정보.
+
 
 public:
 	virtual void Initialize(void)override;
